@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  web1:
+    build: ./webserver
+    container_name: web1
+    hostname: web1
+    volumes:
+      - ./webserver/www:usr/share/nginx/html
+  web2:
+    build: ./webserver
+    container_name: web2
+    hostname: web2
+    volumes:
+      - ./www:usr/share/nginx/html
+
+  load_balancer:
+    build: ./load_balancer
+    container_name: load_balancer
+    hostname: load_balancer
+    ports:
+      - "80:80"
+    links:
+      - web1
+      - web2
