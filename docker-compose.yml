@@ -7,13 +7,14 @@ services:
     container_name: web1
     hostname: web1
     volumes:
-      - ./webserver/www:usr/share/nginx/html
+      - ./webserver/www:/usr/share/nginx/html
   web2:
     build: ./webserver
     container_name: web2
     hostname: web2
     volumes:
-      - ./www:usr/share/nginx/html
+      - ./webserver/www:/usr/share/nginx/html
+
 
   load_balancer:
     build: ./load_balancer
