@@ -1,10 +1,97 @@
+<!--
+CSEC 380 Skitter Login Page
+Author = Mark White
+
+Built using W3 Bootstrap 3
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Skitter</title>
+<meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Style the header */
+.header {
+    padding: 80px;
+    text-align: center;
+    background: #3B5998;
+    color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Column container */
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 20%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Main column */
+.main {   
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+/* Skit box outline*/
+.boxed {
+  border: 2px solid black ;
+}
+
+/* login form style*/
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -54,25 +141,34 @@ span.psw {
     padding-top: 16px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
+
 </style>
 </head>
 <body>
 
-<h2>Login Form</h2>
+<div class="header">
+  <h1>Skitter</h1>
+  <p>Hi Twitter Legal.  Please don't sue us.</p>
+</div>
 
-<form action="/action_page.php">
+<div class="navbar">
+  <a href="http://www.group2skitter.com/login">Home</a>
+  <a href="http://www.group2skitter.com/login">My Feed</a>
+  <a href="http://www.group2skitter.com/login">Settings</a>
+  <a href="http://www.group2skitter.com/logout" class="right">LOGOUT</a>
+</div>
+
+<div class="row">
+  <div class="side">
+      
+  </div>
+  <div class="main">
+      <h2>Login Form</h2>
+
+<!– INSECURE AF! Use: ?php echo htmlspecialchars($_SERVER["PHP_SELF"]);? ->
+<form action="/action_page.php"> 
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <img class="background" src="https://www.uvm.edu/femc/attachments/project/999/generic_person.png" style="width:10%">
   </div>
 
   <div class="container">
@@ -93,6 +189,10 @@ span.psw {
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+      
+      
+  </div>
+</div>
 
 </body>
 </html>
